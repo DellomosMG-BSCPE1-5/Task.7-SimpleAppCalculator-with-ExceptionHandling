@@ -1,20 +1,18 @@
 #Create a Simple App Calculator
 
 #Make a menu for the options (Addition, Subtraction, Multiplication, Division)
-operation_options = {
-    1: "Addition",
-    2: "Subtraction",
-    3: "Multiplication",
-    4: "Division",
-}
+def Mainmenu ():
+    print("Please select one of the following operations:")
 
-def print_options():
-    print("Kindly enter the number that corresponds to the operation you would like to complete...\n")
-    for key in operation_options.keys():
-        print(key, "==", operation_options[key])
+    print("\n\t[1] Addition")
+    print("\t[2] Subtraction")
+    print("\t[3] Multiplication")
+    print("\t[4] Division")
 
-print_options()
-#Ask the user to choose one of the four math operations: Addition, Subtraction, Multiplication, and Division.
+    menu_number = int(input("\nKindly enter the number that corresponds to the operation you want to perform: "))
+    
+Mainmenu()
+
 
 #IF the user chose Addition:
     #THEN ask the user to input two numbers. Can be float and integers.
