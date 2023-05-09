@@ -40,11 +40,17 @@ def Calculations ():
             product = number_1 * number_2
         #Display the Result 
             print(product)
-            
+
     #ELIF the user chose Division:
+        elif option_number == 4:
         #THEN ask the user to input two numbers. Can be float and integers.
+            number_1 = float(input("Enter first number: "))
+            number_2 = float(input("Enter second number: "))
         #Perform the operation.
+            quotient = number_1 / number_2
         #Display the Result 
+            print(format(quotient, ".4f"))
+
     #ELSE
         #Inform the user that he/she inputted a number that was not included in the options
 
