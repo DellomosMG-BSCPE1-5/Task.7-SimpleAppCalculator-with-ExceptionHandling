@@ -11,48 +11,52 @@ def Mainmenu ():
 
 def Calculations ():
         option_number = int(input("\nKindly enter the number that corresponds to the operation you want to perform: "))
-#IF the user chose Addition:
+        #IF the user chose Addition:
         if option_number == 1:
-        #THEN ask the user to input two numbers. Can be float and integers.
+            #THEN ask the user to input two numbers. Can be float and integers.
             number_1 = float(input("Enter first number: "))
             number_2 = float(input("Enter second number: "))
-        #Perform the operation.
+            #Perform the operation.
             sum = number_1 + number_2
-        #Display the Result 
+            #Display the Result 
             print(sum) 
 
-    #ELIF the user chose subtraction:
+        #ELIF the user chose subtraction:
         elif option_number == 2:
-        #THEN ask the user to input two numbers. Can be float and integers.
+            #THEN ask the user to input two numbers. Can be float and integers.
             number_1 = float(input("Enter first number: "))
             number_2 = float(input("Enter second number: "))
-        #Perform the operation.
+            #Perform the operation.
             difference = number_1 - number_2
-        #Display the Result 
+            #Display the Result 
             print(difference)
 
-    #ELIF the user chose multiplication:
+        #ELIF the user chose multiplication:
         elif option_number == 3:
-        #THEN ask the user to input two numbers. Can be float and integers.
+            #THEN ask the user to input two numbers. Can be float and integers.
             number_1 = float(input("Enter first number: "))
             number_2 = float(input("Enter second number: "))
-        #Perform the operation.
+            #Perform the operation.
             product = number_1 * number_2
-        #Display the Result 
+            #Display the Result 
             print(product)
 
-    #ELIF the user chose Division:
+        #ELIF the user chose Division:
         elif option_number == 4:
-        #THEN ask the user to input two numbers. Can be float and integers.
+            #THEN ask the user to input two numbers. Can be float and integers.
             number_1 = float(input("Enter first number: "))
             number_2 = float(input("Enter second number: "))
-        #Perform the operation.
+            #Perform the operation.
             quotient = number_1 / number_2
-        #Display the Result 
+            #Display the Result 
             print(format(quotient, ".4f"))
 
-    #ELSE
+        #ELSE
+        else:
         #Inform the user that he/she inputted a number that was not included in the options
+             print("\nYou have not typed a valid number. Please enter a number from the menu (1-4).\n")
+             Mainmenu()
+             Calculations()
 
 #Ask if user wants another calculation
 #IF the answer in "no":
