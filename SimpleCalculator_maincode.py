@@ -20,10 +20,17 @@ def Calculations ():
             sum = number_1 + number_2
         #Display the Result 
             print(sum) 
+
     #ELIF the user chose subtraction:
+        elif option_number == 2:
         #THEN ask the user to input two numbers. Can be float and integers.
+            number_1 = float(input("Enter first number: "))
+            number_2 = float(input("Enter second number: "))
         #Perform the operation.
+            difference = number_1 - number_2
         #Display the Result 
+            print(difference)
+            
     #ELIF the user chose multiplication:
         #THEN ask the user to input two numbers. Can be float and integers.
         #Perform the operation.
