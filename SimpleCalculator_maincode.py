@@ -30,11 +30,17 @@ def Calculations ():
             difference = number_1 - number_2
         #Display the Result 
             print(difference)
-            
+
     #ELIF the user chose multiplication:
+        elif option_number == 3:
         #THEN ask the user to input two numbers. Can be float and integers.
+            number_1 = float(input("Enter first number: "))
+            number_2 = float(input("Enter second number: "))
         #Perform the operation.
+            product = number_1 * number_2
         #Display the Result 
+            print(product)
+            
     #ELIF the user chose Division:
         #THEN ask the user to input two numbers. Can be float and integers.
         #Perform the operation.
