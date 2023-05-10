@@ -3,14 +3,14 @@
 from art import *
 from colorama import Fore, Back, Style
 program_title = text2art("CALCULATE  IT!", font='tarty1', chr_ignore=True)
-print(Fore.YELLOW + program_title)
+print(Fore.CYAN + program_title)
 
 #Header
 from pyboxen import boxen
 print(
         boxen(
             "  Welcome to Calculate it! A calculator for every need, accuracy at your fingertips.  ",
-            color="yellow",
+            color="cyan",
         )
     )
 
@@ -18,7 +18,7 @@ print(
 while True:
     def menu ():
         options_label = text2art("OPTION: ", font='lilia', chr_ignore=True)
-        print(Fore.YELLOW + options_label)
+        print(Fore.CYAN + options_label)
         print(Fore.WHITE + "\n\t[1] Addition")
         print("\t[2] Subtraction")
         print("\t[3] Multiplication")
@@ -26,10 +26,16 @@ while True:
 
         #Ask the user to choose one of the four math operations: Addition, Subtraction, Multiplication, and Division.
         try:
-            option_number = int(input("\nKindly enter the number that corresponds to the operation you want to perform: "))
+            print(Fore.LIGHTCYAN_EX + Style.NORMAL + "\nKindly enter the number that corresponds to the operation you want to perform: ", end = "")
+            option_number = float(input(Fore.WHITE + ""))
         #If the user enter a character other than numeric
         except ValueError:
-            print("\nInvalid Input. Please type your number as numeric character\n")
+            print(
+                    boxen(
+                        "  !!! Invalid Input. Please type your number as numeric character  ",
+                        color="cyan",
+                    )
+                )
             menu()
         #else
         else:
