@@ -18,45 +18,52 @@ while True:
             Calculator()
         else:
             #If the user's choice is one of the ones in the menu:
-            if option_number <= 4:
-                #Ask the user to input two numbers. Can be float and integers.
-                number_1 = float(input("Enter first number: "))
-                number_2 = float(input("Enter second number: "))
-                
-                #IF the user chose Addition:
-                if option_number == 1:
-                    #Display the Result 
-                    print(number_1 + number_2) 
+            def calculate():
+                if option_number <= 4:
+                    #Ask the user to input two numbers. Can be float and integers.
+                    number_1 = float(input("Enter first number: "))
+                    number_2 = float(input("Enter second number: "))
+                    
+                    #IF the user chose Addition:
+                    if option_number == 1:
+                        #Display the Result 
+                        print(number_1 + number_2) 
 
-                #ELIF the user chose subtraction:
-                elif option_number == 2:
-                    #Display the Result
-                    print(number_1 - number_2) 
+                    #ELIF the user chose subtraction:
+                    elif option_number == 2:
+                        #Display the Result
+                        print(number_1 - number_2) 
 
-                #ELIF the user chose multiplication:
-                elif option_number == 3:
-                    #Display the Result
-                    print(number_1 * number_2) 
+                    #ELIF the user chose multiplication:
+                    elif option_number == 3:
+                        #Display the Result
+                        print(number_1 * number_2) 
 
-                #ELSE, if the user chose Division:
-                if option_number == 4: 
-                        #Perform the operation.
-                        quotient = number_1 / number_2
-                        print(format(quotient, ".3f"))
-
-            #If the user's choice is not one from the menu:
-            else:
-                print("\nYou have not typed a valid number. Please enter a number from the menu (1-4).\n")
-                Calculator()
-
+                    #ELSE, if the user chose Division:
+                    if option_number == 4: 
+                        try:
+                            #Perform the operation.
+                            quotient = number_1 / number_2
+                        except ZeroDivisionError:
+                            print("Zero Division Error: Second number cannot be 0. Please enter again. ")
+                            calculate()
+                        else:
+                            print(format(quotient, ".3f"))
+                                            
+                #If the user's choice is not one from the menu:
+                else:
+                    print("\nYou have not typed a valid number. Please enter a number from the menu (1-4).\n")
+                    Calculator()
+            
+            calculate()
     Calculator()
     
     #Ask if user wants another calculation
-    check = input("\nDo you want to start again? enter Y to restart or press another key to end: ")  # Asking the user if he/she wants to try/start again.
+    check = input("\nDo you want to run the program again? Type Y to restart or press another key to quit: ")  # Asking the user if he/she wants to try/start again.
     if check.upper() == "Y":  # go back to the top
         continue
     #IF the answer in "no":
     print("Thank you for using this program!")
     #THEN end the program
     break
-    
+
