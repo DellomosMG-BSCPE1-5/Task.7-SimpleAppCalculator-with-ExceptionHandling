@@ -1,10 +1,25 @@
 #Create a Simple App Calculator
+#Program title
+from art import *
+from colorama import Fore, Back, Style
+program_title = text2art("CALCULATE  IT!", font='tarty1', chr_ignore=True)
+print(Fore.YELLOW + program_title)
+
+#Header
+from pyboxen import boxen
+print(
+        boxen(
+            "  Welcome to Calculate it! A calculator for every need, accuracy at your fingertips.  ",
+            color="yellow",
+        )
+    )
 
 #Make a menu for the options (Addition, Subtraction, Multiplication, Division)
 while True:
     def menu ():
-        print("Please select one from the options:")
-        print("\n\t[1] Addition")
+        options_label = text2art("OPTION: ", font='lilia', chr_ignore=True)
+        print(Fore.YELLOW + options_label)
+        print(Fore.WHITE + "\n\t[1] Addition")
         print("\t[2] Subtraction")
         print("\t[3] Multiplication")
         print("\t[4] Division")
