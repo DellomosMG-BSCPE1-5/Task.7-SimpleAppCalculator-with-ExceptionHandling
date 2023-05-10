@@ -10,11 +10,12 @@ def calculator():
     print("\t[4] Division")
 
     try:
-    #Ask the user to choose one of the four math operations: Addition, Subtraction, Multiplication, and Division.
+        #Ask the user to choose one of the four math operations: Addition, Subtraction, Multiplication, and Division.
+        global option_number
         option_number = float(input("\nKindly enter the number that corresponds to the operation you want to perform: "))
     #If the user enter a character other than numeric   
     except ValueError as ERROR:
-        print("Invalid Input. Please type your number as numeric character.")
+        print("\nInvalid Input. Please type your number as numeric character.")
         calculator() 
 
     #if the user's choice is one of the ones in the menu:
@@ -40,16 +41,30 @@ def calculator():
 
         #if the user chose Division:
         else:
-            #Perform operation and display the result 
-            print(first_number / second_number)
+            if second_number == 0:
+                raise ZeroDivisionError("\nZero Division Error: Second number cannot be 0. Please enter again.")
+            else:
+                #Perform the operation.
+                quotient = first_number / second_number
+                #Display the result
+                print(quotient)
 
-#If the user's choice is not one from the menu:
+    #If the user's choice is not one from the menu:
     else:
     #then inform the user that his/her input is invalid.
-        print("You have not typed a valid number. Please enter a number that is from the menu (1-4).")
+        print("\nYou have not typed a valid number. Please enter a number that is from the menu (1-4).")
+        calculator()
 
-#Ask if user wants another calculation
-#IF the answer in "no":
-    #THEN end the program
 while True:
     calculator()
+    check = input("\nDo you want to run the program again? Type Y to restart or press another key to quit: ")  # Asking the user if he/she wants to try/start again.
+    #IF user typed "y", go back to the top.
+    if check.upper() == "Y":  
+        continue
+    #ELSE, if the user press other key, quit the program.
+    print("\nThank you for using this program! Have a Nice Day!\n")
+    break
+
+
+
+
