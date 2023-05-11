@@ -1,4 +1,5 @@
 #Create a Simple App Calculator
+
 #modules
 from art import *
 from colorama import Fore, Back, Style
@@ -76,11 +77,9 @@ def calculator():
         #if the user chose Division:
         else:
             try: 
-                #Perform the operation.
-                quotient = first_number / second_number
-                #Display the result
+            #Perform operation and display the result 
                 console = Console()
-                console.print("\n", "[cyan]The quotient is[cyan]: ",  + quotient)
+                console.print("\n", "[cyan]The quotient is[cyan]: ", first_number / second_number)
 
             except ZeroDivisionError:
                 print("\n" +
@@ -104,10 +103,11 @@ def calculator():
 while True:
     introductions()
     calculator()
+    #ask if user wants another calculation
     again = input("\nDo you want to try again? Type Y to restart or press another key to quit: ")  # Asking the user if he/she wants to try/start again.
-    #IF user typed "y", go back to the top.
+    #if user typed "y", go back to the top.
     if again.upper() == "Y":  
         continue
-    #ELSE, if the user press other key, quit the program.
+    #else, if the user press other key, quit the program.
     print("\nThank you for using this program! Have a Nice Day!\n")
     break
